@@ -11,6 +11,13 @@ node_modules
 dist
 dist-ssr
 *.local
+.github
+.firebase
+.firebaserc
+.firebase.json
+remoteconfig.template.json
+firestore.rules
+firestore.indexes.json
 
 # Editor directories and files
 .vscode/*
@@ -22,3 +29,4 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
