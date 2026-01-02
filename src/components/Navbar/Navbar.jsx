@@ -2,6 +2,7 @@ import { signOut } from "firebase/auth";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { auth } from "../../firebase";
+import logo  from "../../assets/react.svg"
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,7 +20,7 @@ const Navbar = () => {
     <nav className="bg-neutral-700 text-white rounded-2xl mx-[2%] px-5 py-4">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <img className="h-6 w-6" src="src/assets/react.svg" alt="logo" />
+          <img className="h-6 w-6" src={logo} alt="logo" />
           <h1 className="font-bold text-lg">BudgetBuddy</h1>
         </div>
 

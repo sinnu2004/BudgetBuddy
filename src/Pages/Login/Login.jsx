@@ -3,7 +3,7 @@ import { signInWithPopup } from 'firebase/auth'
 import { auth, authProvider } from '../../firebase'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import googleLogo from '../../assets/googleLogo.png'
 
 const Login = () => {
   const [signState, setSignState] = useState("Sign In");
@@ -29,7 +29,7 @@ const Login = () => {
         <h1 className='mb-5 font-bold text-xl text-emerald-100'>{signState} with Google</h1>
       </div>
       <div>
-        <img className='h-20 rounded-full w-30 cursor-pointer active:scale-95' src="src/assets/googleLogo.png" alt="" onClick={signIn} />
+        <img className='h-20 rounded-full w-30 cursor-pointer active:scale-95' src={googleLogo} alt="" onClick={signIn} />
       </div>
     </div>
   ) 
