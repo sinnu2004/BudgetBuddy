@@ -3,7 +3,7 @@
 BudgetBuddy is a modern, user-friendly expense tracking web application that helps users manage their daily, monthly, and long-term expenses efficiently. It provides powerful visual insights, comparisons, and budgeting features to help users build better financial habits.
 
 🔗 Live Demo:
-👉 https://budgetbuddy-479ae.web.app/
+👉 https://budgetbuddy-479ae.web.app
 
 🚀 Features
 
