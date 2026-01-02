@@ -1,16 +1,113 @@
-# React + Vite
+💰 BudgetBuddy – Smart Expense Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+BudgetBuddy is a modern, user-friendly expense tracking web application that helps users manage their daily, monthly, and long-term expenses efficiently. It provides powerful visual insights, comparisons, and budgeting features to help users build better financial habits.
 
-Currently, two official plugins are available:
+🔗 Live Demo:
+👉 https://budgetbuddy-479ae.web.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🚀 Features
 
-## React Compiler
+🔐 Secure Authentication (Firebase Auth)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+🧾 Add & Manage Expenses
 
-## Expanding the ESLint configuration
+📊 Dashboard with Visual Analytics
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Monthly expense breakdown
+
+Last 7 days trend (Line Chart)
+
+Last 24 hours expenses (Pie Chart)
+
+📅 Compare Multiple Months
+
+Select 2, 3, or more months
+
+Dynamic bar chart comparison
+
+⏱ Real-time Updates
+
+🎨 Modern & Responsive UI
+
+☁️ Cloud-based Data Storage (Firestore)
+
+🛠 Tech Stack
+Frontend
+
+React.js
+
+Tailwind CSS
+
+Chart.js
+
+React ChartJS 2
+
+React Router
+
+Backend / Services
+
+Firebase Authentication
+
+Firebase Firestore
+
+Firebase Hosting
+
+⚠️ Never commit your .env file to GitHub.
+
+📦 Installation & Setup
+
+Clone the repository:
+
+git clone https://github.com/sinnu2004/BudgetBuddy.git
+cd BudgetBuddy
+Install dependencies:
+npm install
+
+Run the project locally:
+npm run dev
+
+Build for production:
+
+npm run build
+
+🌐 Deployment
+
+The project is deployed using Firebase Hosting.
+
+🔗 Live Project Link:
+👉 https://budgetbuddy-479ae.web.app/
+
+🔒 Security
+
+Firebase credentials are stored using environment variables
+
+Firestore access is protected using authentication-based security rules
+
+Each user can access only their own data
+
+📈 Future Improvements
+
+📅 Yearly expense analytics
+
+📤 Export data as PDF / CSV
+
+🔔 Smart budget notifications
+
+📱 Mobile-first UI improvements
+
+🌍 Multi-currency support
+
+👤 Author
+
+Saurabh Prajapat
+GitHub: sinnu2004
+
+⭐ Support
+
+If you like this project:
+
+⭐ Star the repository
+
+🍴 Fork it
+
+🧑‍💻 Contribute improvements
