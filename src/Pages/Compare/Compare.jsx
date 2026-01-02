@@ -82,55 +82,79 @@ const Compare = () => {
             {
                 label: "Monthly Comparison",
                 data: monthTotals.map((m) => m.total),
-                backgroundColor: ["#06b6d4"],
+                backgroundColor: "red",
                 borderRadius: 5,
+                barThickness: 30,
             },
         ],
     };
-  return (
-    <div className='bg-black text-white'>
-        <div className=''>
-            <Navbar />
-            <div className='flex gap-10 h-60 mt-5 mr-[5%] ml-[5%]'>
-                <div className='bg-neutral-700 rounded-xl px-5 py-5'>
-                    <h1 className='font-bold flex justify-center pb-5'>Compare Monthly Expenses</h1>
-                    <div className='grid grid-cols-4 gap-5 px-5 w-full'>
-                        {months.map((month,index) => (
-                            <button key={month} onClick={() => toggleMonth(index)} className={`px-4 py-2 rounded font-semibold transition cursor-pointer ${
-                                selectedMonths.includes(index) ? "bg-cyan-600 text-white": "bg-gray-500 text-black"}`}>
-                                    {month}
-                                </button>
-                        ))}
-                    </div>
-                </div>
+ return (
+  <div className="bg-black text-white min-h-screen">
+    <Navbar />
 
-                <div className='bg-neutral-700 rounded-xl px-40 py-5 overflow-y-auto'>
-                <div className='flex justify-center gap-20'>
-                    <span className='font-semibold'>Month</span>
-                    <span className='font-semibold'>Total Expense</span>
-                </div>
-                {selectedMonths.length=== 0 ? (
-                    <p>Select one or more months to compare</p>
-                ): (
-                    monthTotals.map((m) => (
-                        <p className='flex justify-center gap-20' key={m.month}>
-                            <span className='w-1/2'>{m.month}</span><span className='w-1/2'>₹{m.total}</span></p>
-                    ))
-                )}
-                </div>
-            </div>
 
-            <div className='flex justify-center bg-neutral-700 rounded-xl mr-[5%] ml-[5%] mt-5 px-5 py-5'>
-                {selectedMonths.length===0 ? (
-                    <p>No data to display</p>
-                ): (
-                    <Bar data={barData} />
-                )}
-            </div>
+    <div className="flex flex-col lg:flex-row gap-5 mt-5 mx-[2%]">
+
+      <div className="bg-neutral-700 rounded-xl px-5 py-5 lg:w-1/2">
+        <h1 className="font-bold text-center pb-5 text-red-400 text-lg sm:text-xl">
+          Compare Monthly Expenses
+        </h1>
+
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+          {months.map((month, index) => (
+            <button
+              key={month}
+              onClick={() => toggleMonth(index)}
+              className={`py-2 px-2 rounded font-semibold text-sm transition active:scale-95
+                ${
+                  selectedMonths.includes(index)
+                    ? "bg-red-400 text-white"
+                    : "bg-gray-500 text-black"
+                }`}
+            >
+              {month}
+            </button>
+          ))}
         </div>
-        <Footer />
+      </div>
+
+
+      <div className="bg-neutral-700 rounded-xl lg:w-1/2 flex flex-col px-4 py-4 max-h-55 overflow-y-auto">
+        {selectedMonths.length === 0 ? (
+          <p className="text-center mt-10">
+            Select one or more months to compare
+          </p>
+        ) : (
+          <ul className="space-y-2">
+            {monthTotals.map((m) => (
+              <li
+                key={m.month}
+                className="flex justify-between items-center px-4 py-2 rounded bg-red-400 text-black font-semibold"
+              >
+                <span>{m.month}</span>
+                <span>₹{m.total}</span>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
     </div>
-  )
+
+
+    <div className="bg-neutral-700 rounded-xl mx-[2%] mt-5 px-4 py-5 flex justify-center">
+      {selectedMonths.length === 0 ? (
+        <p>No data to display</p>
+      ) : (
+        <div className="w-full max-w-4xl">
+          <Bar data={barData} />
+        </div>
+      )}
+    </div>
+
+    <Footer />
+  </div>
+);
+
 }
 
 export default Compare

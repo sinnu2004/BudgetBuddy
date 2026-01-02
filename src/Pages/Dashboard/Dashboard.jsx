@@ -161,6 +161,7 @@ const lastData = {
         backgroundColor: 'red',
         borderColor: 'black',
         borderWidth: 1,
+        barThickness: 35,
       },
     ]
   }
@@ -178,67 +179,100 @@ monthlyExpenses.forEach(exp => {
 
 
   return ( 
-    <div className='bg-neutral-900 pt-5 text-white flex flex-col gap-5'>
-      <Navbar />
-      <div className='flex gap-10 h-80 ml-[5%] mr-[5%]'>
-      <div className='bg-neutral-700 grid grid-cols-3 gap-5 px-5 py-5 rounded-2xl w-1/2 h-full'>
-        {months.map((month, index) => (
-          <button key={month} onClick={() => setSelectMonth(index)} className={`px-4 py-2 w-40 font-bold text-white rounded cursor-pointer active:scale-95 ${selectMonth===index ? "bg-blue-500 text-white": "bg-gray-500 text-black"}`}>
-            {month}
-          </button>
-        ))}
-      </div>
-      <div className='bg-neutral-700 rounded-2xl flex flex-col items-center gap-2 w-1/2 h-full'>
-        <h1 className='font-extrabold text-2xl text-red-500 mt-5'>{months[selectMonth]} Expenses</h1>
-        <div className='flex-1 overflow-y-auto'>
-        {monthlyExpenses.length===0 ? (
-          <p>No Expenses for this month</p>
-        ): (
-          <ul>
-            <div className='flex flex-col'>
-              <div className='flex font-bold text-xl gap-50'>
-                <span className=''>Category</span>
-                <span className=''>Amount</span>
-              </div>
-              <div className='flex flex-col w-full'>
-              {monthlyExpenses.map((exp)=>(
-                <li key={exp.id} className='flex gap-30'>
-                  <span className='px-3 uppercase font-semibold w-40'>{exp.category}</span> 
-                  <span className='flex px-5 w-20'>₹{exp.amount}</span></li>
-              ))}
-              </div>
-            </div>
-          </ul>
-        )}
-        <div className='pt-3 flex justify-center'>
-          TOTAL: ₹{totatAmount}
+  <div className="bg-neutral-900 min-h-screen pt-5 text-white flex flex-col gap-5">
+    <Navbar />
+
+  
+    <div className="flex flex-col lg:flex-row gap-5 mx-[2%]">
+
+    
+      <div className="bg-neutral-700 rounded-2xl p-4 lg:w-1/2">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+          {months.map((month, index) => (
+            <button
+              key={month}
+              onClick={() => setSelectMonth(index)}
+              className={`py-2 px-2 font-semibold rounded active:scale-95 text-sm
+                ${selectMonth === index 
+                  ? "bg-red-400 text-white" 
+                  : "bg-gray-600 text-black"}`}
+            >
+              {month}
+            </button>
+          ))}
         </div>
       </div>
+
+  
+      <div className="bg-neutral-700 rounded-2xl flex flex-col lg:w-1/2">
+        <h1 className="font-extrabold text-xl sm:text-2xl text-red-400 text-center mt-4">
+          {months[selectMonth]} Expenses
+        </h1>
+
+        <div className="flex-1 overflow-y-auto px-4 mt-4">
+          {monthlyExpenses.length === 0 ? (
+            <p className="text-center">No Expenses for this month</p>
+          ) : (
+            <ul className="space-y-2">
+              {monthlyExpenses.map((exp) => (
+                <li
+                  key={exp.id}
+                  className="flex justify-between items-center px-4 py-2 rounded bg-red-400 font-semibold"
+                >
+                  <span className="uppercase">{exp.category}</span>
+                  <span>₹{exp.amount}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+
+        <div className="py-3 flex justify-center font-bold">
+          <span className="border px-3 py-1 rounded bg-red-400">
+            TOTAL: ₹{totatAmount}
+          </span>
+        </div>
       </div>
-      </div>
-      <div className='flex gap-5 h-90 ml-[5%] mr-[5%]'>
-        <div className='flex gap-5 flex-col h-full w-1/2 pb-3'>
-          <div className='bg-neutral-700 flex flex-col w-full justify-center items-center rounded-xl h-35 px-5 py-5'>
-            <Pie data={lastData} />
-            <div className='flex font-semibold'>
-              <span>Last Day Expense: </span>
-              <h1 className='pl-1'>{lastDayExpense}</h1>
-            </div>
-          </div>
-          <div className='bg-neutral-700 flex justify-center flex-col pt-5 items-center rounded-xl pb-5 h-50'>
-            <Line data={last7Data} />
-            <div className='flex gap-2 font-semibold'>
-              <span>Last 7 Days Expense: </span>
-            <h1 className=''>{last7DayExpense}</h1></div>
-          </div>
-        </div> 
-        <div className=' bg-neutral-700 w-1/2 flex justify-center rounded-xl' >
-              <Bar data={data} options={options} />
-          </div>
-      </div>
-      <Footer />
     </div>
-  );
+
+
+    <div className="flex flex-col lg:flex-row gap-5 mx-[2%]">
+
+    
+      <div className="flex flex-col gap-5 lg:w-1/2">
+
+      
+        <div className="bg-neutral-700 rounded-xl p-4 flex flex-col items-center">
+          <div className="w-full max-w-sm">
+            <Pie data={lastData} />
+          </div>
+          <p className="mt-3 font-semibold text-red-500">
+            Last Day Expense: ₹{lastDayExpense}
+          </p>
+        </div>
+
+      
+        <div className="bg-neutral-700 rounded-xl p-4 flex flex-col items-center">
+          <div className="w-full">
+            <Line data={last7Data} />
+          </div>
+          <p className="mt-3 font-semibold text-red-500">
+            Last 7 Days Expense: ₹{last7DayExpense}
+          </p>
+        </div>
+      </div>
+
+    
+      <div className="bg-neutral-700 rounded-xl p-4 lg:w-1/2 flex items-center justify-center">
+        <div className="w-full">
+          <Bar data={data} options={options} />
+        </div>
+      </div>
+    </div>
+
+    <Footer />
+  </div>
+);
 };
 
 export default Dashboard
