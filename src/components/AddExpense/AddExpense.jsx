@@ -33,16 +33,16 @@ const AddExpense = () => {
   };
 
   return (
-    <div className="bg-neutral-700 text-white mt-5 rounded-2xl mx-[2%] px-4 py-6">
+    <div className="bg-slate-800 text-white mt-5 rounded-2xl mx-[2%] px-4 py-6">
       
       
-      <h1 className="text-center font-extrabold text-xl sm:text-2xl text-red-400">
+      <h1 className="text-center font-extrabold text-xl sm:text-2xl text-slate-100">
         Welcome {username}
       </h1>
 
       <form onSubmit={data} className="mt-8 max-w-4xl mx-auto">
-        <h2 className="font-bold text-lg mb-2">Add Expense</h2>
-        <hr className="border-neutral-500 mb-6" />
+        <h2 className="font-bold text-slate-400 text-lg mb-2">Add Expense</h2>
+        <hr className="border-slate-500 mb-6" />
 
         <div className="flex flex-col gap-6">
 
@@ -56,7 +56,7 @@ const AddExpense = () => {
               required
               value={cate}
               onChange={(e) => setCategory(e.target.value)}
-              className="w-full md:w-1/2 h-12 border-2 border-white bg-transparent rounded px-3 outline-none"
+              className="w-full md:w-1/2 h-12 border-2 border-slate-400 bg-transparent rounded px-3 outline-none"
             />
 
         
@@ -69,7 +69,7 @@ const AddExpense = () => {
                 required
                 value={amount}
                 onChange={(e) => setAmount(e.target.value)}
-                className="w-full h-12 border-2 border-white bg-transparent rounded px-3 outline-none"
+                className="w-full h-12 border-2 border-slate-400 bg-transparent rounded px-3 outline-none"
               />
               <span className="font-bold text-xl">₹</span>
             </div>
@@ -82,15 +82,15 @@ const AddExpense = () => {
             placeholder="Description (optional)"
             value={desc}
             onChange={(e) => setDesc(e.target.value)}
-            className="w-full h-28 border-2 border-white bg-transparent rounded-xl px-4 py-2 resize-none outline-none"
+            className="w-full h-28 border-2 border-slate-400 bg-transparent rounded-xl px-4 py-2 resize-none outline-none"
           />
 
     
           <div className="flex justify-center">
             <button
               type="submit"
-              className="bg-red-700 h-11 w-44 rounded cursor-pointer font-semibold uppercase 
-                         active:scale-95 transition-transform"
+              className="bg-slate-700 hover:bg-slate-600 active:bg-slate-700 text-slate-100 h-11 w-44 rounded-lg focus: outline-none focus:ring-2 focus:ring-slate-400 cursor-pointer font-semibold uppercase 
+              active:scale-95 transition-transform border-slate-500 border-2"
             >
               Add Expense
             </button>

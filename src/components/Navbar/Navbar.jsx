@@ -17,7 +17,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-neutral-700 text-white rounded-2xl mx-[2%] px-5 py-4">
+    <nav className="bg-slate-800 text-white rounded-2xl mx-[2%] px-5 py-4">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           <img className="h-6 w-6" src={logo} alt="logo" />
@@ -28,6 +28,7 @@ const Navbar = () => {
           <Link to="/">Home</Link>
           <Link to="/dashboard">Dashboard</Link>
           <Link to="/compare">Compare</Link>
+          <Link to="/insights">Insights</Link>
           <Link to="/about">About</Link>
           <Link to="/contact">Contact</Link>
           <Link to="/login" onClick={Logout}>Logout</Link>

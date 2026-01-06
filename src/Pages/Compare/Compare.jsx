@@ -82,21 +82,21 @@ const Compare = () => {
             {
                 label: "Monthly Comparison",
                 data: monthTotals.map((m) => m.total),
-                backgroundColor: "red",
+                backgroundColor: "#64748B",
                 borderRadius: 5,
                 barThickness: 30,
             },
         ],
     };
  return (
-  <div className="bg-black text-white min-h-screen">
+  <div className="bg-slate-900 text-white min-h-screen">
     <Navbar />
 
 
     <div className="flex flex-col lg:flex-row gap-5 mt-5 mx-[2%]">
 
-      <div className="bg-neutral-700 rounded-xl px-5 py-5 lg:w-1/2">
-        <h1 className="font-bold text-center pb-5 text-red-400 text-lg sm:text-xl">
+      <div className="bg-slate-800 rounded-xl px-5 py-5 lg:w-1/2">
+        <h1 className="font-bold text-center pb-5 text-slate-400 text-lg sm:text-xl">
           Compare Monthly Expenses
         </h1>
 
@@ -108,8 +108,8 @@ const Compare = () => {
               className={`py-2 px-2 rounded font-semibold text-sm transition active:scale-95
                 ${
                   selectedMonths.includes(index)
-                    ? "bg-red-400 text-white"
-                    : "bg-gray-500 text-black"
+                    ? "bg-slate-500 text-white"
+                    : "bg-slate-300 text-black"
                 }`}
             >
               {month}
@@ -119,7 +119,7 @@ const Compare = () => {
       </div>
 
 
-      <div className="bg-neutral-700 rounded-xl lg:w-1/2 flex flex-col px-4 py-4 max-h-55 overflow-y-auto">
+      <div className="bg-slate-800 rounded-xl lg:w-1/2 flex flex-col px-4 py-4 max-h-55 overflow-y-auto">
         {selectedMonths.length === 0 ? (
           <p className="text-center mt-10">
             Select one or more months to compare
@@ -129,7 +129,7 @@ const Compare = () => {
             {monthTotals.map((m) => (
               <li
                 key={m.month}
-                className="flex justify-between items-center px-4 py-2 rounded bg-red-400 text-black font-semibold"
+                className="flex justify-between items-center px-4 py-2 rounded bg-slate-500 font-bold text-slate-100"
               >
                 <span>{m.month}</span>
                 <span>₹{m.total}</span>
@@ -141,7 +141,7 @@ const Compare = () => {
     </div>
 
 
-    <div className="bg-neutral-700 rounded-xl mx-[2%] mt-5 px-4 py-5 flex justify-center">
+    <div className="bg-slate-800 rounded-xl mx-[2%] mt-5 px-4 py-5 flex justify-center">
       {selectedMonths.length === 0 ? (
         <p>No data to display</p>
       ) : (

@@ -4,18 +4,18 @@ import Footer from "../../components/Footer/Footer";
 
 const About = () => {
   return (
-    <div className="bg-black text-white min-h-screen flex flex-col">
+    <div className="bg-slate-900 text-white min-h-screen flex flex-col">
      
       <Navbar />
 
       <div className="flex justify-center px-4 sm:px-6 lg:px-10 mt-6 flex-1">
-        <div className="bg-neutral-700 rounded-xl w-full">
+        <div className="bg-slate-800 rounded-xl w-full">
 
-          <h1 className="text-center font-extrabold text-xl sm:text-2xl py-8">
+          <h1 className="text-center text-slate-100 font-extrabold text-xl sm:text-2xl py-8">
             About Us
           </h1>
 
-          <p className="px-6 sm:px-10 pb-10 leading-relaxed text-sm sm:text-base">
+          <p className="px-6 sm:px-10 text-slate-200 pb-10 leading-relaxed text-sm sm:text-base">
             Managing money shouldn’t be confusing or stressful. We believe
             everyone deserves a simple, clear, and reliable way to understand
             where their money goes and that’s exactly why we built this

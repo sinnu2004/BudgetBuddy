@@ -7,6 +7,7 @@ import ProtectedRoute from './routes/ProtectedRoute';
 import Compare from './Pages/Compare/Compare';
 import About from './Pages/About/About';
 import Contact from './Pages/Contact/Contact';
+import BudgetInsights from './Pages/Manage/BudgetInsights';
 
 const App = () => {
   return (
@@ -26,6 +27,11 @@ const App = () => {
           <Route path='/compare' element= {
             <ProtectedRoute>
               <Compare />
+            </ProtectedRoute>
+          } />
+          <Route path='/insights' element={
+            <ProtectedRoute>
+              <BudgetInsights />
             </ProtectedRoute>
           } />
           <Route path='/about' element={
