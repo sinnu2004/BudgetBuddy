@@ -23,7 +23,7 @@ const Login = () => {
 
   
   return (
-    <div className='h-screen w-full flex flex-col justify-center items-center min-h-screen bg-gradient-to-r from-[#2C5364] via-[#203A43] to-[#0F2027]'>
+    <div className='h-screen w-full flex flex-col justify-center items-center min-h-screen bg-slate-900'>
       <div className='font-bold text-2xl text-emerald-100 mb-5'>Welcome To The BudgetBuddy!</div>
       <div>
         <h1 className='mb-5 font-bold text-xl text-emerald-100'>{signState} with Google</h1>
